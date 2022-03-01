@@ -5,23 +5,20 @@ import java.util.List;
 
 public class Patient {
 
-    //CONSTRUCTOR
-    public Patient(String Name, Long SSN,String Condtion,String medicalIssue, int Room){
+    //CONSTRUCTOR @CT:sorry SSN ryker
+    public Patient(String Name,String Condtion,String medicalIssue, int Room){
         patientName = Name;
-        patientPersonalNo = SSN;
         patientCondition = Condtion;
         patientMedicalIssue = medicalIssue;
         patientRoom = Room;
-
-
     }
 
-    //STATE
-    public String patientName;
-    public long patientPersonalNo;
-    public String patientCondition;
-    public String patientMedicalIssue;
-    public int patientRoom;
+    //STATE @ct:always use private for the fields
+    private String patientName;
+    private long patientPersonalNo;
+    private String patientCondition;
+    private String patientMedicalIssue;
+    private int patientRoom;
 
 
 
@@ -58,5 +55,16 @@ public class Patient {
     }
     public void setPatientRoom(int patientRoom) {
         this.patientRoom = patientRoom;
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "patientName='" + patientName + '\'' +
+                ", patientPersonalNo=" + patientPersonalNo +
+                ", patientCondition='" + patientCondition + '\'' +
+                ", patientMedicalIssue='" + patientMedicalIssue + '\'' +
+                ", patientRoom=" + patientRoom +
+                '}';
     }
 }
