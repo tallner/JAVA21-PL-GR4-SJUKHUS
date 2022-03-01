@@ -50,12 +50,12 @@ public class Filehandler {
     public void writePatientsToFile(Hospital hospital, String filename){
         try {
             FileWriter myWriter = new FileWriter(basePath+filename,false);
-/*
-            for (int i = 0; i < hospital.getCustomersAndAccounts().size() ; i++) {
-                myWriter.write(hospital.getCustomersAndAccounts().get(i) + System.lineSeparator());
+
+            for (int i = 0; i < hospital.getPatientList().size() ; i++) {
+                myWriter.write(hospital.getPatientList().get(i) + System.lineSeparator());
             }
             myWriter.close();
-            System.out.println("Successfully printed the customerfile.");*/
+            System.out.println("Successfully printed the patients.");
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -63,46 +63,37 @@ public class Filehandler {
 
     }
 
-    public Hospital readFile(String filename) {
+    public void writeEmployeesToFile(Hospital hospital, String filename){
+        try {
+            FileWriter myWriter = new FileWriter(basePath+filename,false);
+
+            for (int i = 0; i < hospital.getEmployeeList().size() ; i++) {
+                myWriter.write(hospital.getEmployeeList().get(i) + System.lineSeparator());
+            }
+            myWriter.close();
+            System.out.println("Successfully printed the employees.");
+
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+    }
+
+
+    public void readFile(String filename) {
         try {
             myObj = new File(basePath+filename);
             Scanner myReader = new Scanner(myObj);
-            Hospital hospital = new Hospital();
+            while (myReader.hasNextLine()){
+                System.out.println(myReader.nextLine());
+            }
 
-            System.out.println("Customers");
-
-           /* while (myReader.hasNextLine()) {
-                var line = myReader.nextLine();
-                var InfoLine = line.split(" : ");
-                var NameSSN = InfoLine[0].split(" ");
-                var AccountsInfo = InfoLine[1].split(" , ");
-
-                //Handle Name and SSN
-                var firstName = NameSSN[0];
-                var lastName = NameSSN[1];
-                var SSN = Long.parseLong(NameSSN[2]);
-
-                bank.addCustomer(firstName,lastName,SSN);
-
-                //Handle accounts
-                for (var acc : AccountsInfo) {
-                    var Accounts = acc.split(" ");
-                    var accountNr = Long.parseLong(Accounts[0]);
-                    var accountType = Accounts[1];
-                    var rate = Float.parseFloat(Accounts[2]);
-                    var balance = Float.parseFloat(Accounts[3]);
-                    bank.presetAccount(SSN, accountType, rate, balance, accountNr);
-                }*/
-
-
-           // }
             myReader.close();
-            //System.out.println(bank);
-            return hospital;
+
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
-            return null;
+
         }
 
     }
