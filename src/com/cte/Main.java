@@ -96,95 +96,11 @@ public class Main {
 
                     }
                 }
-
-
+                
             } else {
                 System.out.println(" In valid username and/or password ");
             }
         }
-
-
-
-
-        System.out.println("************************");
-        System.out.println("Name: "+e1.getEmployeeName());
-        System.out.println("Title: "+e1.getEmployeeTitle());
-        System.out.println("Password: "+e1.getEmployeePassword());
-        System.out.println("Salary: "+e1.getEmployeeSalary());
-        System.out.println("Hours: "+e1.getEmployeeWorkedHrs());
-        System.out.println("Speciality: "+e1.getEmployeeSpeciality());
-
-        System.out.println("************************");
-        System.out.println("Name: "+e2.getEmployeeName());
-        System.out.println("Title: "+e2.getEmployeeTitle());
-        System.out.println("Password: "+e2.getEmployeePassword());
-        System.out.println("Salary: "+e2.getEmployeeSalary());
-        System.out.println("Hours: "+e2.getEmployeeWorkedHrs());
-        System.out.println("Speciality: "+e2.getEmployeeSpeciality());
-
-        System.out.println("************************");
-        System.out.println("Name: "+e3.getEmployeeName());
-        System.out.println("Title: "+e3.getEmployeeTitle());
-        System.out.println("Password: "+e3.getEmployeePassword());
-        System.out.println("Salary: "+e3.getEmployeeSalary());
-        System.out.println("Hours: "+e3.getEmployeeWorkedHrs());
-        System.out.println("Speciality: "+e3.getEmployeeSpeciality());
-
-        System.out.println("************************");
-        System.out.println("Name: "+e4.getEmployeeName());
-        System.out.println("Title: "+e4.getEmployeeTitle());
-        System.out.println("Password: "+e4.getEmployeePassword());
-        System.out.println("Salary: "+e4.getEmployeeSalary());
-        System.out.println("Hours: "+e4.getEmployeeWorkedHrs());
-        System.out.println("Speciality: "+e4.getEmployeeSpeciality());
-
-        System.out.println("************************");
-        System.out.println("Name: "+e5.getEmployeeName());
-        System.out.println("Title: "+e5.getEmployeeTitle());
-        System.out.println("Password: "+e5.getEmployeePassword());
-        System.out.println("Salary: "+e5.getEmployeeSalary());
-        System.out.println("Hours: "+e5.getEmployeeWorkedHrs());
-        System.out.println("Speciality: "+e5.getEmployeeSpeciality());
-
-
-
-        System.out.println("*************************");
-        System.out.println("PATIENT 1:");
-        System.out.println("Name: "+p1.getPatientName());
-        System.out.println("SSN: "+p1.getPatientPersonalNo());
-        System.out.println("Condition: "+p1.getPatientCondition());
-        System.out.println("Medical Issue: "+p1.getPatientMedicalIssue());
-        System.out.println("Room: "+p1.getPatientRoom());
-        System.out.println("*************************");
-        System.out.println("PATIENT 2:");
-        System.out.println("Name: "+p2.getPatientName());
-        System.out.println("SSN: "+p2.getPatientPersonalNo());
-        System.out.println("Condition: "+p2.getPatientCondition());
-        System.out.println("Medical Issue: "+p2.getPatientMedicalIssue());
-        System.out.println("Room: "+p2.getPatientRoom());
-        System.out.println("*************************");
-        System.out.println("PATIENT 3:");
-        System.out.println("Name: "+p3.getPatientName());
-        System.out.println("SSN: "+p3.getPatientPersonalNo());
-        System.out.println("Condition: "+p3.getPatientCondition());
-        System.out.println("Medical Issue: "+p3.getPatientMedicalIssue());
-        System.out.println("Room: "+p3.getPatientRoom());
-        System.out.println("*************************");
-        System.out.println("PATIENT 4:");
-        System.out.println("Name: "+p4.getPatientName());
-        System.out.println("SSN: "+p4.getPatientPersonalNo());
-        System.out.println("Condition: "+p4.getPatientCondition());
-        System.out.println("Medical Issue: "+p4.getPatientMedicalIssue());
-        System.out.println("Room: "+p4.getPatientRoom());
-        System.out.println("*************************");
-        System.out.println("PATIENT 5:");
-        System.out.println("Name: "+p5.getPatientName());
-        System.out.println("SSN: "+p5.getPatientPersonalNo());
-        System.out.println("Condition: "+p5.getPatientCondition());
-        System.out.println("Medical Issue: "+p5.getPatientMedicalIssue());
-        System.out.println("Room: "+p5.getPatientRoom());
-
-
     }
 
 }
