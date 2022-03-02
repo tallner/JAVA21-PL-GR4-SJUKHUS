@@ -1,0 +1,5 @@
+Employee{employeeName='Rae Gabriel', employeeTitle='Doctor', employeePassword='Rae1234', employeeSalary=55000, employeeWorkedHrs=190, employeeSpeciality='Diabetes'}
+Employee{employeeName='Puja Katell', employeeTitle='Doctor', employeePassword='Puja1234', employeeSalary=57000, employeeWorkedHrs=195, employeeSpeciality='Cancer'}
+Employee{employeeName='Hardman Svanhild', employeeTitle='Nurse', employeePassword='Hardman1234', employeeSalary=35000, employeeWorkedHrs=160, employeeSpeciality='Blood control'}
+Employee{employeeName='Sylvia Sultana', employeeTitle='Nurse', employeePassword='Sylvia234', employeeSalary=34000, employeeWorkedHrs=160, employeeSpeciality='Oxygen control'}
+Employee{employeeName='Gulshan Lucette', employeeTitle='Doctor', employeePassword='Gulshan1234', employeeSalary=68000, employeeWorkedHrs=180, employeeSpeciality='Stomach'}

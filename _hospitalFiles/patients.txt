@@ -1,0 +1,5 @@
+Patient{patientName='Anna Andersson', patientPersonalNo=0, patientCondition='Diabetes', patientMedicalIssue='Something', patientRoom=101}
+Patient{patientName='Bertil Bernt', patientPersonalNo=0, patientCondition='Breast Cancer (female)', patientMedicalIssue='Something', patientRoom=102}
+Patient{patientName='Cecilia Cysh', patientPersonalNo=0, patientCondition='Depression', patientMedicalIssue='Something', patientRoom=103}
+Patient{patientName='Daniel Dong', patientPersonalNo=0, patientCondition='HIV', patientMedicalIssue='Something', patientRoom=104}
+Patient{patientName='Erik Elm', patientPersonalNo=0, patientCondition='Lung Cancer', patientMedicalIssue='Something', patientRoom=105}

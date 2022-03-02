@@ -12,141 +12,99 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         // main takes care of the terminal and runs the application continuous until exit
-        String hospName = "";
-        int sel = 666;
-        Scanner userSel = new Scanner(System.in);
+
         Hospital hospital = new Hospital();
         Filehandler filehandler = new Filehandler();
 
-        // creates a mockdata file in _hospfiles so you can start playing around with correct fileformat
-//        filehandler.writeCustomersToFile(Mock.initiateMymock(new Hospital()),"mockHosp.txt");
-
-        //simple UI to test the methods
-        while(true)
-        {
-            System.out.println(" |**********************| ");
-            System.out.println(" |****     MENU     ****| ");
-            System.out.println(" |**********************| ");
-            System.out.println(" 0. List files "); //list files in a certain directory
-            System.out.println(" 1. Create new files "); //Generates a new hospital files
-            System.out.println(" 2. Import patient list"); //Reads a patient list from file
-            System.out.println(" 3. Add a patient"); //add patient to hospital
-            System.out.println(" 4. Remove a patient"); //remove patient from hospital
-
-            System.out.println(" 5. Get patient information"); //get information on patient
-            System.out.println(" 6. Change patient information"); //change patient information
-
-            System.out.println(" 100. Exit ");
-            System.out.println("....................");
-            System.out.println("Make your choice!");
-
-
-
-            //make sure the input is correct
-            try {
-                sel = userSel.nextInt();
-            } catch (Exception e) {
-                System.out.println("bad input");
-                userSel.next();
-            }
-
-            //exit the app
-            if(sel == 100) break;
-
-
-            //select what action to do
-            switch (sel) {
-                //list all files in directory
-                case 0 -> {
-                    System.out.println("Available files:");
-                    filehandler.listFiles();
-                }
-
-                //create a new files
-                case 1 -> {
-                    filehandler.createFile("patients.txt");
-                    filehandler.createFile("employees.txt");
-                    filehandler.createFile("equipment.txt");
-                    filehandler.createFile("medicine.txt");
-                    filehandler.createFile("rooms.txt");
-                }
-
-                //read patients from an existing bank
-                case 2 -> {
-                    System.out.println(" |*******************************************| ");
-                    System.out.println(" |**** Read and list patient from a file ****| ");
-                    System.out.println(" |*******************************************| ");
-
-                    System.out.println("Name of file: ");
-                    hospName = userSel.next();
-
-                    hospital = filehandler.readFile(hospName);
-
-                    //print customer names
-                   // System.out.println(bank.getCustomers());
-
-                }
-
-
-                //Add a patient
-                case 3 -> {
-
-                    System.out.print("Patient first name: ");
-                    String firstName = userSel.next();
-                    System.out.print("Patient last name: ");
-                    String lastName = userSel.next();
-
-                    //System.out.println(bank.addCustomer(firstName,lastName,SSN));
-                    //add both to the object and the file so that you dont need to read the file again or loose if restarting
-                    filehandler.writePatientsToFile(hospital,hospName);
-                }
-
-                //Remove a patient
-                case 4 -> {
-                    System.out.print("Patient name: ");
-                    String lastName = userSel.next();
-
-                    //System.out.println(hospital.removeCustomer(SSN));
-                    filehandler.writePatientsToFile(hospital,hospName);
-                }
-
-                //Get a certain customers information
-                case 5 -> {
-                    System.out.print("Customer SSN: ");
-                    long SSN = userSel.nextLong();
-
-                    //System.out.println(bank.getCustomer(SSN));
-
-                }
-
-                //Change patient information
-                case 6 -> {
-                    System.out.print("Patient first name: ");
-                    String firstName = userSel.next();
-                    System.out.print("Patient last name: ");
-                    String lastName = userSel.next();
-
-
-                    /*if (hospital.changePatientInformation(firstName, lastName)){
-                        System.out.println("Customer name changed");
-                        filehandler.writeCustomersToFile(bank, bankName);
-                    }
-                    else{
-                        System.out.println("Customer "+SSN+" does not exist");
-                    }*/
-                }
-                default -> System.out.println("0");
-            }
-        }
-
-
-
+        // creates a mockdata
+        Patient p1 = new Patient("Anna Andersson", "Diabetes","Something",101);
+        Patient p2 = new Patient("Bertil Bernt","Breast Cancer (female)","Something",102);
+        Patient p3 = new Patient("Cecilia Cysh","Depression","Something",103);
+        Patient p4 = new Patient("Daniel Dong","HIV", "Something", 104);
+        Patient p5 = new Patient("Erik Elm","Lung Cancer","Something",105);
         Employee e1 = new Employee("Rae Gabriel", "Doctor", "Rae1234", 55000,190,"Diabetes");
         Employee e2 = new Employee("Puja Katell", "Doctor", "Puja1234", 57000,195,"Cancer");
         Employee e3 = new Employee("Hardman Svanhild", "Nurse", "Hardman1234", 35000,160,"Blood control");
         Employee e4 = new Employee("Sylvia Sultana", "Nurse", "Sylvia234", 34000,160,"Oxygen control");
         Employee e5 = new Employee("Gulshan Lucette", "Doctor", "Gulshan1234", 68000,180,"Stomach");
+        Room r1 = new Room("Ann-Marie",45);
+        Room r2 = new Room("Johan",15);
+        Room r3 = new Room("Anders",10);
+        Room r4 = new Room("Matilda",9);
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print(" Enter user name : ");
+            String userName = scanner.nextLine();
+
+            System.out.print(" Enter password : ");
+            String password = scanner.nextLine();
+
+            if ("username".equals(userName) && "password".equals(password)) {
+
+                while (true)
+                {
+
+                    System.out.println(" User successfully logged-in.. ");
+                    System.out.println(" Press 1 if you want to add Patients ");
+                    System.out.println(" Press 2 if you want to read Patients ");
+                    System.out.println(" Press 3 if you want to access Rooms ");
+                    System.out.println(" Press 4 if you want to add Employees ");
+                    System.out.println(" Press 5 if you want to read Employees ");
+
+                    String nextStep = scanner.nextLine();
+                    if (nextStep.equals("1")) {
+                        System.out.println(" Add patients ");
+                        //Patient klass
+                        hospital.addPatient(p1);
+                        hospital.addPatient(p2);
+                        hospital.addPatient(p3);
+                        hospital.addPatient(p4);
+                        hospital.addPatient(p5);
+                        filehandler.writePatientsToFile(hospital,"patients.txt");
+
+                    }else if(nextStep.equals("2")) {
+                        System.out.println(" Patient list: ");
+                        filehandler.readFile("patients.txt");
+
+                    }else if(nextStep.equals("3")) {
+                        System.out.println(" Welcome to Rooms ");
+                        //Room klass
+                        hospital.addRoomToArray(r1);
+                        hospital.addRoomToArray(r2);
+                        hospital.addRoomToArray(r3);
+                        hospital.addRoomToArray(r4);
+
+                        System.out.println(hospital.getRooms());
+
+
+
+                    }else if(nextStep.equals("4")) {
+                        System.out.println(" Welcome to Employees ");
+                        //Employees klass
+                        hospital.addEmployee(e1);
+                        hospital.addEmployee(e2);
+                        hospital.addEmployee(e3);
+                        hospital.addEmployee(e4);
+                        hospital.addEmployee(e5);
+                        filehandler.writeEmployeesToFile(hospital,"employees.txt");
+
+                    }else if(nextStep.equals("5")) {
+                        System.out.println(" Employee list: ");
+                        filehandler.readFile("employees.txt");
+
+                    }
+                }
+
+
+            } else {
+                System.out.println(" In valid username and/or password ");
+            }
+        }
+
+
+
 
         System.out.println("************************");
         System.out.println("Name: "+e1.getEmployeeName());
@@ -188,12 +146,6 @@ public class Main {
         System.out.println("Hours: "+e5.getEmployeeWorkedHrs());
         System.out.println("Speciality: "+e5.getEmployeeSpeciality());
 
-
-        Patient p1 = new Patient("Anna Andersson", 112233445566L,"Diabetes","Something",101);
-        Patient p2 = new Patient("Bertil Bernt", 2233442211L,"Breast Cancer (female)","Something",102);
-        Patient p3 = new Patient("Cecilia Cysh", 4455667788L,"Depression","Something",103);
-        Patient p4 = new Patient("Daniel Dong", 6644999933L,"HIV", "Something", 104);
-        Patient p5 = new Patient("Erik Elm", 2255114466L,"Lung Cancer","Something",105);
 
 
         System.out.println("*************************");

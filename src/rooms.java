@@ -24,7 +24,6 @@ public class rooms {
            String nextStep = scanner.nextLine();
            rooms.add(nextStep);
            System.out.println(rooms);
-
        }
     }
 }

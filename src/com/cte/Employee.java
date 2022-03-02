@@ -70,4 +70,16 @@ public class Employee {
     public void setEmployeeSpeciality(String employeeSpeciality) {
         this.employeeSpeciality = employeeSpeciality;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeName='" + employeeName + '\'' +
+                ", employeeTitle='" + employeeTitle + '\'' +
+                ", employeePassword='" + employeePassword + '\'' +
+                ", employeeSalary=" + employeeSalary +
+                ", employeeWorkedHrs=" + employeeWorkedHrs +
+                ", employeeSpeciality='" + employeeSpeciality + '\'' +
+                '}';
+    }
 }
