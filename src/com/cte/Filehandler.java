@@ -80,6 +80,23 @@ public class Filehandler {
     }
 
 
+    public void writeRoomBookingToFile(Hospital hospital, String filename){
+        try {
+            FileWriter myWriter = new FileWriter(basePath+filename,false);
+
+            for (int i = 0; i < hospital.getRooms().size() ; i++) {
+                myWriter.write(hospital.getRooms().get(i) + System.lineSeparator());
+            }
+            myWriter.close();
+            System.out.println("Successfully printed the employees.");
+
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+    }
+
+
     public void readFile(String filename) {
         try {
             myObj = new File(basePath+filename);

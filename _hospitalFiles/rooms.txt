@@ -1,0 +1,4 @@
+Patient{patientName='Ann-Marie', patientRoom=45}
+Patient{patientName='Johan', patientRoom=15}
+Patient{patientName='Anders', patientRoom=10}
+Patient{patientName='Matilda', patientRoom=9}
