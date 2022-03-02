@@ -12,9 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         // main takes care of the terminal and runs the application continuous until exit
-
         Hospital hospital = new Hospital();
         Filehandler filehandler = new Filehandler();
 
@@ -49,9 +47,10 @@ public class Main {
                     System.out.println(" User successfully logged-in.. ");
                     System.out.println(" Press 1 if you want to add Patients ");
                     System.out.println(" Press 2 if you want to read Patients ");
-                    System.out.println(" Press 3 if you want to access Rooms ");
-                    System.out.println(" Press 4 if you want to add Employees ");
-                    System.out.println(" Press 5 if you want to read Employees ");
+                    System.out.println(" Press 3 if you want to add Room booking ");
+                    System.out.println(" Press 4 if you want to read Room bookings ");
+                    System.out.println(" Press 5 if you want to add Employees ");
+                    System.out.println(" Press 6 if you want to read Employees ");
 
                     String nextStep = scanner.nextLine();
                     if (nextStep.equals("1")) {
@@ -75,12 +74,14 @@ public class Main {
                         hospital.addRoomToArray(r2);
                         hospital.addRoomToArray(r3);
                         hospital.addRoomToArray(r4);
-
-                        System.out.println(hospital.getRooms());
-
-
+                        filehandler.writeRoomBookingToFile(hospital, "rooms.txt");
 
                     }else if(nextStep.equals("4")) {
+                        System.out.println(" Room bookings: ");
+                        filehandler.readFile("rooms.txt");
+                    }
+
+                        else if(nextStep.equals("5")) {
                         System.out.println(" Welcome to Employees ");
                         //Employees klass
                         hospital.addEmployee(e1);
@@ -90,13 +91,13 @@ public class Main {
                         hospital.addEmployee(e5);
                         filehandler.writeEmployeesToFile(hospital,"employees.txt");
 
-                    }else if(nextStep.equals("5")) {
+                    }else if(nextStep.equals("6")) {
                         System.out.println(" Employee list: ");
                         filehandler.readFile("employees.txt");
 
                     }
                 }
-                
+
             } else {
                 System.out.println(" In valid username and/or password ");
             }
