@@ -2,10 +2,12 @@ package com.cte;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Hospital {
     private ArrayList<Patient> patients = new ArrayList<>();
     private ArrayList<Employee> employees = new ArrayList<>();
+//    private room
 
     public Hospital() {
     }
@@ -30,6 +32,11 @@ public class Hospital {
         return employees;
     }
 
+//    method bookroom
+    public  void addRoomToArray(ArrayList<String> rooms) {
+          /*  rooms.add(nextStep);
+            System.out.println(rooms);*/
+    }
 
     @Override
     public String toString() {

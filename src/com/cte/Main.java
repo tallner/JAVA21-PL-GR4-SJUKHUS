@@ -83,6 +83,9 @@ public class Main {
                         System.out.println(" Employee list: ");
                         filehandler.readFile("employees.txt");
 
+                    }else if(nextStep.equals("6")) {
+                        System.out.println(" Book room: ");
+                        hospital.addRoomToArray(new ArrayList<>());
                     }
                 }
 
