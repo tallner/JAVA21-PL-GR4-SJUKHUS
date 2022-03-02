@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Hospital {
     private ArrayList<Patient> patients = new ArrayList<>();
     private ArrayList<Employee> employees = new ArrayList<>();
+    private ArrayList<Room> rooms = new ArrayList<>();
 //    private room
 
     public Hospital() {
@@ -33,16 +34,22 @@ public class Hospital {
     }
 
 //    method bookroom
-    public  void addRoomToArray(ArrayList<String> rooms) {
-          /*  rooms.add(nextStep);
-            System.out.println(rooms);*/
+    public void addRoomToArray(Room room) {
+         rooms.add(room);
     }
+
+    //get list of patients
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
 
     @Override
     public String toString() {
         return "Hospital{" +
                 ", patients=" + patients +
                  ", employees=" + employees +
+                 ", rooms=" + rooms +
                 '}';
     }
 }

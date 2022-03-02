@@ -29,7 +29,10 @@ public class Main {
         Employee e3 = new Employee("Hardman Svanhild", "Nurse", "Hardman1234", 35000,160,"Blood control");
         Employee e4 = new Employee("Sylvia Sultana", "Nurse", "Sylvia234", 34000,160,"Oxygen control");
         Employee e5 = new Employee("Gulshan Lucette", "Doctor", "Gulshan1234", 68000,180,"Stomach");
-
+        Room r1 = new Room("Ann-Marie",45);
+        Room r2 = new Room("Johan",15);
+        Room r3 = new Room("Anders",10);
+        Room r4 = new Room("Matilda",9);
 
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print(" Enter user name : ");
@@ -68,6 +71,14 @@ public class Main {
                     }else if(nextStep.equals("3")) {
                         System.out.println(" Welcome to Rooms ");
                         //Room klass
+                        hospital.addRoomToArray(r1);
+                        hospital.addRoomToArray(r2);
+                        hospital.addRoomToArray(r3);
+                        hospital.addRoomToArray(r4);
+
+                        System.out.println(hospital.getRooms());
+
+
 
                     }else if(nextStep.equals("4")) {
                         System.out.println(" Welcome to Employees ");
@@ -83,9 +94,6 @@ public class Main {
                         System.out.println(" Employee list: ");
                         filehandler.readFile("employees.txt");
 
-                    }else if(nextStep.equals("6")) {
-                        System.out.println(" Book room: ");
-                        hospital.addRoomToArray(new ArrayList<>());
                     }
                 }
 
